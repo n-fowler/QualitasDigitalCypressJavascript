@@ -40,32 +40,6 @@ class FaqPage {
     getRightBodies() {
         return cy.xpath(FaqPageLocators.right_bodies())
     }
-
-    getFaqPageTitles() {
-        var faqPageActualTitles = []
-        this.getLeftTitles().each(($el) => {
-            const text = ($el).text()
-            faqPageActualTitles.push(text)
-        })
-        this.getRightTitles().each(($el) => {
-            const text = ($el).text()
-            faqPageActualTitles.push(text)
-        })
-        return faqPageActualTitles;
-    }
-
-    getFaqPageBodies() {
-        var faqPageActualBodies = []
-        this.getLeftBodies().each(($el) => {
-            const text = ($el).text()
-            faqPageActualBodies.push(text)
-        })
-        this.getRightBodies().each(($el) => {
-            const text = ($el).text()
-            faqPageActualBodies.push(text)
-        })
-        return faqPageActualBodies;
-    }
 }
 
 export default FaqPage
