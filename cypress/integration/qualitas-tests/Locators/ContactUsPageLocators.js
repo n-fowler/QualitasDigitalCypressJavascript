@@ -36,7 +36,7 @@ var ContactUsPageLocators = {
         return 'input[name="email"]'
     },
     checkbox_section: function() {
-        return 'fieldset[id^="checkbox-yui_3_17_2_1"][id$="22390"]'
+        return 'input[name^="checkbox-yui_3_17_2_1"][name$="22390-field"]'
     },
     additional_message_text_area: function() {
         return 'textarea[id^="textarea-yui_3_17_2_1"][id$="67663-field"]'

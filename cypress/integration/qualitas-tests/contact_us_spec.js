@@ -32,7 +32,6 @@ import ContactUsPage from "./PageObject/ContactUsPage"
     assert.isNotNull(contactUsPage.getLastNameField())
     assert.isNotNull(contactUsPage.getEmailField())
 
-    var options = contactUsPage.getCheckboxSection().find('div')
     var expectedOptions = [
       "Additional Test Coverage",
       "Framework Updates",
@@ -45,10 +44,14 @@ import ContactUsPage from "./PageObject/ContactUsPage"
       "Technical Co-Founder",
       "Other* (Include additional detail below)"]
 
-    for(var i = 0; i < options.length; i++) {
-      assert.equal('checkbox', options[i].find('label').find('input').type)
-      assert.equal(expectedOptions[i], options[i].find('label').find('input').value)
-    };
+    contactUsPage.getCheckboxSection().each(($el, index, $list) => {
+      cy.wrap($el).invoke('prop', 'type').then((actualType) => {
+        expect(actualType).to.equal('checkbox')
+      });
+      cy.wrap($el).invoke('prop', 'value').then((actualValue) => {
+        expect(actualValue).to.equal(expectedOptions[index])
+      });
+    })
 
     assert.isNotNull(contactUsPage.getAdditionalMessageTextArea())
     assert.isNotNull(contactUsPage.getSubmitButton())
