@@ -30,7 +30,7 @@ class AboutUsPage {
     }
 
     getSidebarLinks() {
-        return cy.xpath(AboutUsPageLocators.sidebar().get('a'))
+        return cy.xpath(AboutUsPageLocators.sidebar().find('a'))
     }
 
     getOurServicesLink() {

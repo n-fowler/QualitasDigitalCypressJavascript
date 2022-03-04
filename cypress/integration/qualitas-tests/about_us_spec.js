@@ -1,6 +1,6 @@
 import AboutUsPage from "./PageObject/AboutUsPage"
 
-describe('Qualitas - About Us - Load', () => {
+  describe('Qualitas - About Us - Load', () => {
     it('The About Us Page Loads', () => {
       const aboutUsPage = new AboutUsPage();
       aboutUsPage.navigate();
