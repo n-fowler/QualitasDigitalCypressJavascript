@@ -1,4 +1,3 @@
-import HomePageLocators from "./Locators/HomePageLocators";
 import HomePage from "./PageObject/HomePage"
 
   describe('Qualitas - Home - Load', () => {
@@ -35,9 +34,7 @@ import HomePage from "./PageObject/HomePage"
         "https://www.qualitasdigital.com/schedule-consultation",
         "https://www.qualitasdigital.com/contact-us"]
 
-      homePage.getNavSection()
-              .find(HomePageLocators
-              .nav_collection())
+      homePage.getNavCollection()
               .each(($el, index, $list) => {
                 cy.wrap($el)
                   .find('a')
@@ -45,9 +42,7 @@ import HomePage from "./PageObject/HomePage"
                   .should('have.text', expectedLinkTexts[index])
               })
 
-      homePage.getNavSection()
-              .find(HomePageLocators
-              .nav_collection())
+      homePage.getNavCollection()
               .each(($el, index, $list) => {
                 cy.wrap($el)
                   .find('a')
@@ -141,8 +136,7 @@ import HomePage from "./PageObject/HomePage"
               });
 
       //Validate Secondary Section
-      homePage.getSecondarySection()
-              .find(HomePageLocators.secondary_section_title())
+      homePage.getSecondarySectionTitle()
               .should('have.text', this.testdata.secondary_section_title)
       homePage.getSecondarySectionImage()
               .find('img')
@@ -150,11 +144,9 @@ import HomePage from "./PageObject/HomePage"
               .then((actualSrc) => {
                 expect(actualSrc).to.include(this.testdata.secondary_section_image_src)
               });
-      homePage.getSecondarySection()
-              .find(HomePageLocators.secondary_section_body_text())
+      homePage.getSecondarySectionBodyText()
               .should('have.text', this.testdata.secondary_section_body_text)
-      homePage.getSecondarySection()
-              .find(HomePageLocators.secondary_section_aboutus_button())
+      homePage.getSecondarySectionAboutUsButton()
               .find('a')
               .invoke('prop', 'href')
               .then((actualHref) => {
@@ -166,8 +158,7 @@ import HomePage from "./PageObject/HomePage"
               .should('have.text', this.testdata.midpage_title)
 
       //Validate Tertiary Section
-      homePage.getTertiarySection()
-              .find(HomePageLocators.tertiary_section_title())
+      homePage.getTertiarySectionTitle()
               .should('have.text', this.testdata.tertiary_section_title)
       homePage.getTertiarySectionImage()
               .find('img')
@@ -175,11 +166,9 @@ import HomePage from "./PageObject/HomePage"
               .then((actualSrc) => {
                 expect(actualSrc).to.include(this.testdata.tertiary_section_image_src)
               });
-      homePage.getTertiarySection()
-              .find(HomePageLocators.tertiary_section_body_text())
+      homePage.getTertiarySectionBodyText()
               .should('have.text', this.testdata.tertiary_section_body_text)
-      homePage.getTertiarySection()
-              .find(HomePageLocators.tertiary_section_client_testimonials_button())
+      homePage.getTertiarySectionClientTestimonialsButton()
               .find('a')
               .invoke('prop', 'href')
               .then((actualHref) => {
@@ -204,26 +193,22 @@ import HomePage from "./PageObject/HomePage"
         "https://www.qualitasdigital.com/our-commitment",
         "https://www.qualitasdigital.com/terms-conditions"]
 
-      homePage.getFooterNav()
-        .find(HomePageLocators
-        .footer_links_collection())
-        .each(($el, index, $list) => {
-          cy.wrap($el)
-            .find('a')
-            .find('span')
-            .should('have.text', expectedLinkTexts[index])
-        })
+      homePage.getFooterLinksCollection()
+              .each(($el, index, $list) => {
+                cy.wrap($el)
+                  .find('a')
+                  .find('span')
+                  .should('have.text', expectedLinkTexts[index])
+              })
 
-      homePage.getFooterNav()
-        .find(HomePageLocators
-        .footer_links_collection())
-        .each(($el, index, $list) => {
-          cy.wrap($el)
-            .find('a')
-            .invoke('prop', 'href')
-            .then((actualValue) => {
-              expect(actualValue).to.equal(expectedPageUrls[index])
-            })
-        })
+      homePage.getFooterLinksCollection()
+              .each(($el, index, $list) => {
+                cy.wrap($el)
+                  .find('a')
+                  .invoke('prop', 'href')
+                  .then((actualValue) => {
+                    expect(actualValue).to.equal(expectedPageUrls[index])
+                  })
+              })
     });
   });

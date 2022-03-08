@@ -22,7 +22,7 @@ class HomePage {
     }
 
     getNavCollection() {
-        return cy.get(HomePageLocators.nav_collection())
+        return this.getNavSection().find(HomePageLocators.nav_collection())
     }
 
     getNavBodyText() {
@@ -102,7 +102,7 @@ class HomePage {
     }
 
     getSecondarySectionTitle() {
-        return cy.get(HomePageLocators.secondary_section_title())
+        return this.getSecondarySection().find(HomePageLocators.secondary_section_title())
     }
     
     getSecondarySectionImage() {
@@ -110,11 +110,11 @@ class HomePage {
     }
 
     getSecondarySectionBodyText() {
-        return cy.get(HomePageLocators.secondary_section_body_text())
+        return this.getSecondarySection().find(HomePageLocators.secondary_section_body_text())
     }
 
     getSecondarySectionAboutUsButton() {
-        return cy.get(HomePageLocators.secondary_section_aboutus_button())
+        return this.getSecondarySection().find(HomePageLocators.secondary_section_aboutus_button())
     }
 
     getMidPageTitle() {
@@ -126,7 +126,7 @@ class HomePage {
     }
 
     getTertiarySectionTitle() {
-        return cy.get(HomePageLocators.tertiary_section_title())
+        return this.getTertiarySection().find(HomePageLocators.tertiary_section_title())
     }
 
     getTertiarySectionImage() {
@@ -134,11 +134,11 @@ class HomePage {
     }
 
     getTertiarySectionBodyText() {
-        return cy.get(HomePageLocators.tertiary_section_body_text())
+        return this.getTertiarySection().find(HomePageLocators.tertiary_section_body_text())
     }
 
     getTertiarySectionClientTestimonialsButton() {
-        return cy.get(HomePageLocators.tertiary_section_client_testimonials_button())
+        return this.getTertiarySection().find(HomePageLocators.tertiary_section_client_testimonials_button())
     }
 
     getFooterTitle() {
@@ -158,7 +158,7 @@ class HomePage {
     }
 
     getFooterLinksCollection() {
-        return cy.get(HomePageLocators.footer_links_collection())
+        return this.getFooterNav().find(HomePageLocators.footer_links_collection())
     }
 }
 
