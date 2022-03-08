@@ -30,7 +30,7 @@ var AboutUsPageLocators = {
         return "block-5347679b4da120838be3"
     },
     image: function() {
-        return 'div[id^="yui_3_17_2_1"][id$="67"]'
+        return 'div[id^="yui_3_17_2_1"][id$="68"]'
     },
 };
 

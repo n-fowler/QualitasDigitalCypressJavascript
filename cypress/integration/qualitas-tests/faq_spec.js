@@ -4,9 +4,9 @@ import FaqPage from "./PageObject/FaqPage"
     it('The Faq Page Loads', () => {
       const faqPage = new FaqPage();
       faqPage.navigate();
-      faqPage.getLogoImage().should('have.class', 'logo-image')
-    })
-  })
+      faqPage.getLogoImage().should('have.class', 'logo-image');
+    });
+  });
 
   describe('Qualitas - Faq - Content', () => {
     before(function () {
