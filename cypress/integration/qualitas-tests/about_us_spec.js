@@ -1,34 +1,60 @@
-import AboutUsPage from "./PageObject/AboutUsPage"
+import AboutUsPage from "./PageObject/AboutUsPage";
+const aboutUsPage = new AboutUsPage();
 
-  describe('Qualitas - About Us - Load', () => {
-    it('The About Us Page Loads', () => {
-      const aboutUsPage = new AboutUsPage();
-      aboutUsPage.navigate();
-      aboutUsPage.getLogoImage().should('have.class', 'logo-image')
+describe("Qualitas - About Us - Load", function () {
+  before(function () {
+    aboutUsPage.navigate();
+  });
+  it("The About Us Page Loads", function () {
+    aboutUsPage.getLogoImage().should("have.class", "logo-image");
+  });
+});
+
+describe("Qualitas - About Us - Content", function () {
+  beforeEach(function () {
+    cy.fixture("AboutUsPageTestData").then(function (testdata) {
+      this.testdata = testdata;
     });
   });
-
-  describe('Qualitas - About Us - Content', () => {
-    before(function () {
-      cy.fixture('AboutUsPageTestData').then(function (testdata) {
-          this.testdata = testdata
-      });
-    });
-
-    it('The About Us Page Content Is Present', function() {
-      const aboutUsPage = new AboutUsPage();
-      aboutUsPage.navigate();
-      aboutUsPage.getHeaderTitle().should('have.text', this.testdata.header_title)
-      aboutUsPage.getTitle().should('have.text', this.testdata.aboutus_title)
-      aboutUsPage.getAboutUsImage().find('img').invoke('attr', 'src').then((actualSrc) => {
-        expect(actualSrc).to.include(this.testdata.aboutus_image_src)
-      });
-      aboutUsPage.getBodyText().should('have.text', this.testdata.aboutus_body_text)
-      aboutUsPage.getOurServicesLink().invoke('prop', 'href').then((actualHref) => {
-        expect(actualHref).to.equal(this.testdata.our_services_link)
-      });
-      aboutUsPage.getScheduleConsultationLink().invoke('prop', 'href').then((actualHref) => {
-        expect(actualHref).to.equal(this.testdata.schedule_consultation_link)
-      });
-    });
+  before(function() {
+    aboutUsPage.navigate();
+  })
+  it("The page title is: Let Us Build Something Together", function () {
+    aboutUsPage
+      .getHeaderTitle()
+      .should("have.text", this.testdata.header_title);
   });
+  it("The sidebar title is: A word from our Founder", function () {
+    aboutUsPage.getTitle().should("have.text", this.testdata.aboutus_title);
+  });
+  it("The remote work page image is present", function () {
+    aboutUsPage
+      .getAboutUsImage()
+      .find("img")
+      .invoke("attr", "src")
+      .then((actualSrc) => {
+        expect(actualSrc).to.include(this.testdata.aboutus_image_src);
+      });
+  });
+  it("The sidebar body text is present", function () {
+    aboutUsPage
+      .getBodyText()
+      .should("have.text", this.testdata.aboutus_body_text);
+  });
+  it("The sidebar our services link is present", function () {
+    aboutUsPage
+      .getOurServicesLink()
+      .invoke("prop", "href")
+      .then((actualHref) => {
+        expect(actualHref).to.equal(this.testdata.our_services_link);
+      });
+  });
+  it("The sidebar schedule a free consultation link is present", function () {
+    aboutUsPage
+      .getScheduleConsultationLink()
+      .invoke("prop", "href")
+      .then((actualHref) => {
+        expect(actualHref).to.equal(this.testdata.schedule_consultation_link);
+      });
+  });
+});
