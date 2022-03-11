@@ -1,65 +1,65 @@
 import TestimonialsPageLocators from "../Locators/TestimonialsPageLocators";
 
 class TestimonialsPage {
-    navigate() {
-        cy.visit(TestimonialsPageLocators.url())
-    }
+  navigate() {
+    cy.visit(TestimonialsPageLocators.url());
+  }
 
-    getLogoImage() {
-        return cy.get(TestimonialsPageLocators.logo_image())
-    }
+  getLogoImage() {
+    return cy.get(TestimonialsPageLocators.logo_image());
+  }
 
-    getHighlightedReviewContent() {
-        return cy.xpath(TestimonialsPageLocators.highlighted_review_content())
-    }
-    
-    getHighlightedReviewAuthor() {
-        return cy.xpath(TestimonialsPageLocators.highlighted_review_author())
-    }
+  getHighlightedReviewContent() {
+    return cy.xpath(TestimonialsPageLocators.highlighted_review_content());
+  }
 
-    getMidPageTitle() {
-        return cy.xpath(TestimonialsPageLocators.midpage_title())
-    }
+  getHighlightedReviewAuthor() {
+    return cy.xpath(TestimonialsPageLocators.highlighted_review_author());
+  }
 
-    getReviewOneContent() {
-        return cy.xpath(TestimonialsPageLocators.review_one_content())
-    }
+  getMidPageTitle() {
+    return cy.xpath(TestimonialsPageLocators.midpage_title());
+  }
 
-    getReviewOneAuthor() {
-        return cy.xpath(TestimonialsPageLocators.review_one_author())
-    }
+  getReviewOneContent() {
+    return cy.xpath(TestimonialsPageLocators.review_one_content());
+  }
 
-    getReviewTwoContent() {
-        return cy.xpath(TestimonialsPageLocators.review_two_content())
-    }
+  getReviewOneAuthor() {
+    return cy.xpath(TestimonialsPageLocators.review_one_author());
+  }
 
-    getReviewTwoAuthor() {
-        return cy.xpath(TestimonialsPageLocators.review_two_author())
-    }
+  getReviewTwoContent() {
+    return cy.xpath(TestimonialsPageLocators.review_two_content());
+  }
 
-    getReviewThreeContent() {
-        return cy.xpath(TestimonialsPageLocators.review_three_content())
-    }
+  getReviewTwoAuthor() {
+    return cy.xpath(TestimonialsPageLocators.review_two_author());
+  }
 
-    getReviewThreeAuthor() {
-        return cy.xpath(TestimonialsPageLocators.review_three_author())
-    }
+  getReviewThreeContent() {
+    return cy.xpath(TestimonialsPageLocators.review_three_content());
+  }
 
-    getReviewFourContent() {
-        return cy.xpath(TestimonialsPageLocators.review_four_content())
-    }
+  getReviewThreeAuthor() {
+    return cy.xpath(TestimonialsPageLocators.review_three_author());
+  }
 
-    getReviewFourAuthor() {
-        return cy.xpath(TestimonialsPageLocators.review_four_author())
-    }
+  getReviewFourContent() {
+    return cy.xpath(TestimonialsPageLocators.review_four_content());
+  }
 
-    getReviewFiveContent() {
-        return cy.xpath(TestimonialsPageLocators.review_five_content())
-    }
+  getReviewFourAuthor() {
+    return cy.xpath(TestimonialsPageLocators.review_four_author());
+  }
 
-    getReviewFiveAuthor() {
-        return cy.xpath(TestimonialsPageLocators.review_five_author())
-    }
+  getReviewFiveContent() {
+    return cy.xpath(TestimonialsPageLocators.review_five_content());
+  }
+
+  getReviewFiveAuthor() {
+    return cy.xpath(TestimonialsPageLocators.review_five_author());
+  }
 }
 
-export default TestimonialsPage
+export default TestimonialsPage;

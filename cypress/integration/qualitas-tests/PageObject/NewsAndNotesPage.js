@@ -1,32 +1,32 @@
 import NewsAndNotesPageLocators from "../Locators/NewsAndNotesPageLocators";
 
 class NewsAndNotesPage {
-    navigate() {
-        cy.visit(NewsAndNotesPageLocators.url())
-    }
+  navigate() {
+    cy.visit(NewsAndNotesPageLocators.url());
+  }
 
-    getLogoImage() {
-        return cy.get(NewsAndNotesPageLocators.logo_image())
-    }
+  getLogoImage() {
+    return cy.get(NewsAndNotesPageLocators.logo_image());
+  }
 
-    getEntries() {
-        return cy.xpath(NewsAndNotesPageLocators.entries())
-    }
+  getEntries() {
+    return cy.xpath(NewsAndNotesPageLocators.entries());
+  }
 
-    getFirstEntry() {
-        return cy.xpath(NewsAndNotesPageLocators.entry_one())
-    }
+  getFirstEntry() {
+    return cy.xpath(NewsAndNotesPageLocators.entry_one());
+  }
 
-    getFirstEntryText() {
-        return cy.xpath(NewsAndNotesPageLocators.entry_one_text())
-    }
+  getFirstEntryText() {
+    return cy.xpath(NewsAndNotesPageLocators.entry_one_text());
+  }
 
-    getFirstEntryCategory() {
-        return cy.xpath(NewsAndNotesPageLocators.entry_one_category())
-    }
-    
-    getFirstEntryExcerpt() {
-        return cy.xpath(NewsAndNotesPageLocators.entry_one_excerpt())
-    }
+  getFirstEntryCategory() {
+    return cy.xpath(NewsAndNotesPageLocators.entry_one_category());
+  }
+
+  getFirstEntryExcerpt() {
+    return cy.xpath(NewsAndNotesPageLocators.entry_one_excerpt());
+  }
 }
-export default NewsAndNotesPage
+export default NewsAndNotesPage;
